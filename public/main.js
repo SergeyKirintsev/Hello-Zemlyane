@@ -8,7 +8,7 @@ aboutBtn.addEventListener("click", (evt) => {
 
 function createCard() {
   const data = getInputValues();
-  return fetch(`http://localhost:8080/about`, {
+  return fetch(`31.184.254.179/about`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
