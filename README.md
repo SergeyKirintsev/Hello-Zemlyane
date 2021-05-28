@@ -35,3 +35,10 @@ pm2 save
 
 ^X - Exit
 ```
+
+### ssh
+```
+ssh-keygen
+ssh-copy-id user@server
+ssh user@server
+```
