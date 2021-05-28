@@ -1,6 +1,12 @@
 # Hello-Zemlyane
 ## Using Ubuntu
 
+### Update ubuntu
+```
+sudo apt-get update
+sudo apt-get dist-upgrade
+```
+
 ### Install Node.js LTS
 ```
 curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo -E bash -
