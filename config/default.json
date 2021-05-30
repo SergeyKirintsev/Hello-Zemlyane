@@ -1,0 +1,6 @@
+{
+  "port": 5000,
+  "mongoUri": "mongodb+srv://dbUser:dbUser18!+@cluster0.37f9h.mongodb.net/begemoticDatabase?retryWrites=true&w=majority",
+  "tlgToken": "1897317403:AAHTaJd9269hhsdLKm9hvRwSjo0ZeB7mriM",
+  "chatId": "-554032561"
+}

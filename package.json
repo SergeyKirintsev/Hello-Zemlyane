@@ -11,8 +11,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "config": "^3.3.6",
     "express": "^4.17.1",
-    "mongoose": "^5.12.11",
+    "mongoose": "^5.12.12",
     "node-telegram-bot-api": "0.53.0"
   },
   "devDependencies": {
