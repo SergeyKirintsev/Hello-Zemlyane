@@ -22,7 +22,14 @@ apt update; apt install git
 ```
 ### [PM2](https://www.npmjs.com/package/pm2)
 ```
-npm install pm2 -g
+sudo npm install pm2 -g
+
+pm2 start app.js
+pm2 startup (копируем и выполняем полученную команду)
+pm2 save
+
+pm2 kill # Полностью отключает текущий PM2 и запущенные приложения
+pm2 restart app 
 ```
 ---
 ## Clone and run project
@@ -31,9 +38,7 @@ git clone https://github.com/your.git
 cd folderYourPrj
 npm i
 
-pm2 start app.js
-pm2 startup
-pm2 save
+git pull origin main
 ```
 ### Nano text editor
 ```
@@ -47,4 +52,52 @@ pm2 save
 ssh-keygen
 ssh-copy-id user@server
 ssh user@server
+```
+---
+### MongoDB
+```
+curl -fsSL https://www.mongodb.org/static/pgp/server-4.4.asc | sudo apt-key add -
+
+echo "deb [ arch=amd64 ] https://repo.mongodb.org/apt/ubuntu bionic/mongodb-org/4.4 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-4.4.list
+
+sudo apt update
+
+sudo apt install -y mongodb-org
+```
+Следующая команда запустит mongo-сервер:
+```
+sudo service mongod start
+```
+Сделаем так, чтобы MongoDB запускался автоматически даже при перезагрузке удалённой машины:
+```
+sudo systemctl enable mongod.service
+```
+---
+### Nginx
+```
+sudo apt update
+sudo apt install -y nginx
+```
+Файрвол — ufw
+```
+sudo ufw allow 'Nginx Full'
+sudo ufw allow OpenSSH
+
+sudo ufw enable
+```
+```
+sudo systemctl enable --now nginx
+```
+В nginx есть две директории для хранения конфигураций: sites-available/ и sites-enabled/. В первой хранятся конфигурации всех хостов, а во второй — ссылки только на активные. Перед редактированием конфигурации нужно создать символическую ссылку между sites-available и sites-enabled
+```
+sudo nano /etc/nginx/sites-available/default
+
+# /etc/nginx/sites-available/default — путь к конфигурационному файлу nginx
+```
+тестировать конфигурацию «на лету»
+```
+sudo nginx -t
+```
+```
+sudo systemctl reload nginx
 ```
