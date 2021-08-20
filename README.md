@@ -21,6 +21,7 @@ add-apt-repository ppa:git-core/ppa
 apt update; apt install git
 ```
 ### [PM2](https://www.npmjs.com/package/pm2)
+https://nodejsdev.ru/doc/pm2/
 ```
 sudo npm install pm2 -g
 
